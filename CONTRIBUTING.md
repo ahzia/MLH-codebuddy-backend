@@ -8,9 +8,9 @@ These steps will guide you through contributing to this project:
 - Fork the repo
 - Clone it and install dependencies
 
-		git clone https://github.com/danielfsousa/express-rest-es2017-boilerplate
+		git clone https://github.com/ahzia/MLH-codebuddy-backend
 		npm install
 
 - Make changes
 - Create tests
-- Send a [GitHub Pull Request](https://github.com/danielfsousa/express-rest-es2017-boilerplate/compare?expand=1) with a clear list of what you've done (read more [about pull requests](https://help.github.com/articles/about-pull-requests/)). Make sure all of your commits are atomic (one feature per commit).
+- Send a [GitHub Pull Request](https://github.com/ahzia/MLH-codebuddy-backend/compare?expand=1) with a clear list of what you've done (read more [about pull requests](https://help.github.com/articles/about-pull-requests/)). Make sure all of your commits are atomic (one feature per commit).
