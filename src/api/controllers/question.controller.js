@@ -1,7 +1,9 @@
 const httpStatus = require('http-status');
 const { omit } = require('lodash');
+const Pusher = require('pusher');
 const Question = require('../models/question.model');
 const { authorizeGCPAndCreateEvent } = require('../services/googleAuthConfigure');
+const {pusherConfig} = require('../../config/vars');
 /**
  * Load question and append to req.
  * @public
@@ -34,6 +36,19 @@ exports.create = async (req, res, next) => {
     req.body.user = req.user;
     const question = new Question(req.body);
     const savedQuestion = await question.save();
+    // push notification using pusher
+    const pusher = new Pusher({
+      appId: pusherConfig.appId,
+      key: pusherConfig.key,
+      secret: pusherConfig.secret,
+      cluster: pusherConfig.cluster,
+      useTLS: true,
+    });
+    // TODO:for channel we add room that question is related to
+    pusher.trigger('general', 'general', {
+      message: savedQuestion.title,
+      meetLink: savedQuestion.meetLink,
+    });
     res.redirect(savedQuestion.meetLink);
   } catch (error) {
     next(error);

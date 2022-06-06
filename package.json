@@ -61,6 +61,7 @@
     "starter project"
   ],
   "dependencies": {
+    "apidoc": "^0.28.1",
     "axios": "^0.21.1",
     "bcryptjs": "2.4.3",
     "bluebird": "^3.5.0",
@@ -88,9 +89,9 @@
     "passport-jwt": "4.0.0",
     "pm2": "^5.1.0",
     "pug": "^3.0.1",
+    "pusher": "^5.1.0-beta",
     "uuid": "^3.1.0",
-    "winston": "^3.1.0",
-    "apidoc": "^0.28.1"
+    "winston": "^3.1.0"
   },
   "devDependencies": {
     "chai": "^4.1.0",
