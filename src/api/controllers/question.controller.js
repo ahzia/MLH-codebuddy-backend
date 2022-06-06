@@ -1,7 +1,7 @@
 const httpStatus = require('http-status');
 const { omit } = require('lodash');
 const Question = require('../models/question.model');
-
+const { authorizeGCPAndCreateEvent } = require('../services/googleAuthConfigure');
 /**
  * Load question and append to req.
  * @public
@@ -27,12 +27,16 @@ exports.get = (req, res) => res.json(req.locals.question.transform());
  */
 exports.create = async (req, res, next) => {
   try {
+    const logedinUser = req.user.transform();
+    const { email } = logedinUser;
+    const event = await authorizeGCPAndCreateEvent(email, req.body);
+    req.body.meetLink = event.hangoutLink;
+    req.body.user = req.user;
     const question = new Question(req.body);
     const savedQuestion = await question.save();
-    res.status(httpStatus.CREATED);
-    res.json(savedQuestion.transform());
+    res.redirect(savedQuestion.meetLink);
   } catch (error) {
-    next(Question.checkDuplicateEmail(error));
+    next(error);
   }
 };
 
@@ -52,7 +56,7 @@ exports.replace = async (req, res, next) => {
 
     res.json(savedQuestion.transform());
   } catch (error) {
-    next(Question.checkDuplicateEmail(error));
+    next(error);
   }
 };
 
