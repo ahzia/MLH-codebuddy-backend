@@ -3,7 +3,7 @@ const { omit } = require('lodash');
 const Pusher = require('pusher');
 const Question = require('../models/question.model');
 const { authorizeGCPAndCreateEvent } = require('../services/googleAuthConfigure');
-const {pusherConfig} = require('../../config/vars');
+const { pusherConfig } = require('../../config/vars');
 /**
  * Load question and append to req.
  * @public
@@ -49,7 +49,7 @@ exports.create = async (req, res, next) => {
       message: savedQuestion.title,
       meetLink: savedQuestion.meetLink,
     });
-    res.redirect(savedQuestion.meetLink);
+    res.json({ url: savedQuestion.meetLink });
   } catch (error) {
     next(error);
   }

@@ -25,7 +25,7 @@ module.exports = {
   googleClientID: process.env.GCP_CLIENT_ID,
   googleClientSecret: process.env.GCP_CLIENT_SECRET,
   googleRedirectURL: process.env.GCP_REDIRECT_URL,
-  pusherConfig:{
+  pusherConfig: {
     appId: process.env.PUSHER_APP_ID,
     key: process.env.PUSHER_APP_KEY,
     secret: process.env.PUSHER_APP_SECRET,
