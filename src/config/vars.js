@@ -22,4 +22,7 @@ module.exports = {
     password: process.env.EMAIL_PASSWORD,
   },
   googleCalendarID: process.env.GOOGLE_CALENDAR_ID,
+  googleClientID: process.env.GCP_CLIENT_ID,
+  googleClientSecret: process.env.GCP_CLIENT_SECRET,
+  googleRedirectURL: process.env.GCP_REDIRECT_URL,
 };
