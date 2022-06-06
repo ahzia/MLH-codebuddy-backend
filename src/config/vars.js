@@ -21,4 +21,5 @@ module.exports = {
     username: process.env.EMAIL_USERNAME,
     password: process.env.EMAIL_PASSWORD,
   },
+  googleCalendarID: process.env.GOOGLE_CALENDAR_ID,
 };
