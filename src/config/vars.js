@@ -22,4 +22,13 @@ module.exports = {
     password: process.env.EMAIL_PASSWORD,
   },
   googleCalendarID: process.env.GOOGLE_CALENDAR_ID,
+  googleClientID: process.env.GCP_CLIENT_ID,
+  googleClientSecret: process.env.GCP_CLIENT_SECRET,
+  googleRedirectURL: process.env.GCP_REDIRECT_URL,
+  pusherConfig: {
+    appId: process.env.PUSHER_APP_ID,
+    key: process.env.PUSHER_APP_KEY,
+    secret: process.env.PUSHER_APP_SECRET,
+    cluster: process.env.PUSHER_APP_CLUSTER,
+  },
 };
