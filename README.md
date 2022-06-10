@@ -124,10 +124,11 @@ yarn deploy
 
 ## License
 
-[MIT License](README.md) - [Daniel Sousa](https://github.com/danielfsousa)
+[MIT License](README.md)
 
 ## acknowledgment
 
 We use this repo as a staterkit for our project:
 
 [Express REST bilerplate - Daniel Sousa(MIT)](https://github.com/danielfsousa/express-rest-boilerplate)
+[Daniel Sousa](https://github.com/danielfsousa)
